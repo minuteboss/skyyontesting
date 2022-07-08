@@ -1,1 +1,1 @@
-web: gunicorn skyyontesting.wsgi --log-file -
+web: gunicorn skyliqa.wsgi --log-file -

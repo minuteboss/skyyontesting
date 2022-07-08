@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-)@4r*asgss&p7ehcum)1kkc@mg2y8b(3+loiume^*7#9-0eixa
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['skyyontesting.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['skyliqa.herokuapp.com','127.0.0.1']
 
 
 # Application definition
