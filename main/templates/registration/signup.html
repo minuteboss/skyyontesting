@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="page-wrapper">
+	<main class="main">
+		<nav aria-label="breadcrumb" class="breadcrumb-nav border-0 mb-0">
+			<div class="container">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+					<li class="breadcrumb-item"><a href="#">Pages</a></li>
+					<li class="breadcrumb-item active" aria-current="page">Signin</li>
+				</ol>
+			</div><!-- End .container -->
+		</nav><!-- End .breadcrumb-nav -->
+
+		<div class="login-page bg-image pt-8 pb-8 pt-md-12 pb-md-12 pt-lg-17 pb-lg-17"
+			style="background-image: url('assets/images/backgrounds/NEW-TRY-BG.jpg')">
+			<div class="container">
+
+				
+				<div class="form-box">
+					<div class="form-tab">
+                       <div class="tab-pane fade show active" id="register-2" role="tabpanel"
+								aria-labelledby="register-tab-2">
+								<form action="" id="formAdd" method="post">
+									{% csrf_token %}
+									<div class="form-group">
+										<p>By creating an account with our store, you will be able to move through
+											the checkout process faster, store multiple
+											shipping addresses, view and track your orders in your account and more
+										</p>
+										<section class="container my-4">
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6 offset-3">
+                                                    <form method="post" action="">
+                                                        {% csrf_token %}
+                                                        <table class="table table-bordered">
+                                                            {{form.as_table}}
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="custom-control custom-checkbox">
+                                                                        <input type="checkbox" class="custom-control-input"
+                                                                            id="register-policy-2" required>
+                                                                        <label class="custom-control-label" for="register-policy-2">I agree to
+                                                                            the <a href="privacy.html">privacy policy</a> *</label>
+                                                                    </div><!-- End .custom-checkbox -->
+                            
+                                                                    <p class="formalert justify-content-center" id="formalert">We have sent an email to your email address. Please click the link included to verify your email address.</p>
+                                                                    
+                                                                </td>
+                                                                <td colspan="2">
+                                                                    <button type="submit" class="btn btn-outline-primary-2 mt-2">
+                                                                        SIGN UP
+                                                                    </button>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </form>
+                                                    <p>Have account already?<a href='{% url 'login' %}> login </a></p>
+                                                </div>
+                                            </div>
+                                        </section>
+										
+									</div><!-- End .form-footer -->
+								</form>
+							</div><!-- .End .tab-pane -->
+
+
+   
+{% endblock %}
