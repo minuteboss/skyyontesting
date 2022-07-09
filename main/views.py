@@ -25,7 +25,18 @@ def signup(request):
 		context = {'form':form}
 		return render(request, 'registration/signup.html', context)
 
-     
+def loginPage(request):
+    username = request.POST['signin_username']
+    password = request.POST['signin_password']
+    user = authenticate(request, username=username, password=password)
+    if user is not None:
+        login(request, user)
+        return redirect('dashboard')
+        # Redirect to a success page.
+        ...
+    else:
+        # Return an 'invalid login' error message.
+        ...     
 
 #dashboard
 def dashboard(request):
