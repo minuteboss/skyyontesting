@@ -21,7 +21,16 @@
 				
 				<div class="form-box">
 					<div class="form-tab">
-						
+						<ul class="nav nav-pills nav-fill" role="tablist">
+							<li class="nav-item">
+								<a class="nav-link" id="signin-tab-2" data-toggle="tab" href="#signin-2" role="tab"
+									aria-controls="signin-2" aria-selected="false">Sign In</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link active" id="register-tab-2" data-toggle="tab" href="#register-2"
+									role="tab" aria-controls="register-2" aria-selected="true">Register</a>
+							</li>
+						</ul>
 						<div class="tab-content">
 							<div class="tab-pane fade" id="signin-2" role="tabpanel" aria-labelledby="signin-tab-2"
 								itemid="signin">
@@ -32,13 +41,38 @@
 									<button type="submit" class="btn btn-success">Login</button>	
 									</form>
 							</div><!-- .End .tab-pane -->
-							
+							<div class="tab-pane fade show active" id="register-2" role="tabpanel"
+								aria-labelledby="register-tab-2">
+								<form method="post" action="">
+									{% csrf_token %}
+									<table class="table table-bordered">
+										{{form.as_table}}
+										<tr>
+											<td>
+												<div class="custom-control custom-checkbox">
+													<input type="checkbox" class="custom-control-input"
+														id="register-policy-2" required>
+													<label class="custom-control-label" for="register-policy-2">I agree to
+														the <a href="privacy.html">privacy policy</a> *</label>
+												</div><!-- End .custom-checkbox -->
+		
+												<p class="formalert justify-content-center" id="formalert">We have sent an email to your email address. Please click the link included to verify your email address.</p>
+												
+											</td>
+											<td colspan="2">
+												<button type="submit" class="btn btn-outline-primary-2 mt-2">
+													SIGN UP
+												</button>
+											</td>
+										</tr>
+									</table>
+								</form>
+							</div><!-- .End .tab-pane -->
 						</div><!-- End .tab-content -->
 					</div><!-- End .form-tab -->
 				</div><!-- End .form-box -->
 			</div><!-- End .container -->
 		</div><!-- End .login-page section-bg -->
 	</main><!-- End .main -->
-
    
 {% endblock %}
