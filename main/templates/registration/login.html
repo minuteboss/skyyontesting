@@ -25,7 +25,7 @@
 						<div class="tab-content">
 							<div class="tab-pane fade" id="signin-2" role="tabpanel" aria-labelledby="signin-tab-2"
 								itemid="signin">
-								<form method="post" class="from-group">
+								<form method="post" class="from-group" action="">
 									{% csrf_token %}
 									{{form.as_p}}
 									<p>Don't have an accoount? Create one <a href="/register">here</a></p>
