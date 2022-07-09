@@ -1,56 +1,22 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block content %}
-
-<div class="page-wrapper">
-	<main class="main">
-		<nav aria-label="breadcrumb" class="breadcrumb-nav border-0 mb-0">
-			<div class="container">
-				<ol class="breadcrumb">
-					<li class="breadcrumb-item"><a href="index.html">Home</a></li>
-					<li class="breadcrumb-item"><a href="#">Pages</a></li>
-					<li class="breadcrumb-item active" aria-current="page">Login</li>
-				</ol>
-			</div><!-- End .container -->
-		</nav><!-- End .breadcrumb-nav -->
-
-		<div class="login-page bg-image pt-8 pb-8 pt-md-12 pb-md-12 pt-lg-17 pb-lg-17"
-			style="background-image: url('assets/images/backgrounds/NEW-TRY-BG.jpg')">
-			<div class="container">
-
-				
-				<div class="tab-pane fade" id="signin-2" role="tabpanel" aria-labelledby="signin-tab-2"
-                                    itemid="signin">
-                                    <form onsubmit="return ajaxpost()">
-                                        <div class="form-group">
-                                            <p>Please enter the following information to create your account.</p>
-                                            <label for="singin-email-2">Username or email address *</label>
-                                            <input type="text" class="form-control" id="singin-email-2"
-                                                name="singin_username" required>
-                                        </div><!-- End .form-group -->
-
-                                        <div class="form-group">
-                                            <label for="singin-password-2">Password *</label>
-                                            <input type="password" class="form-control" id="singin-password-2"
-                                                name="singin_password" required>
-                                        </div><!-- End .form-group -->
-
-                                        <div class="form-footer">
-                                            <button type="submit" class="btn btn-outline-primary-2 mb-2">
-                                                <span><a href="index.html">LOG IN</a> </span>
-                                                <i class="icon-long-arrow-right"></i>
-                                            </button>
-
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input"
-                                                    id="signin-remember-2">
-                                                <label class="custom-control-label" for="signin-remember-2">Remember
-                                                    Me</label>
-                                            </div><!-- End .custom-checkbox -->
-
-                                            <a href="#" class="forgot-link">Forgot Your Password?</a>
-                                        </div><!-- End .form-footer -->
-                                    </form>
-                                </div><!-- .End .tab-pane -->
-   
-{% endblock %}
+<form action="" method=POST>
+    {% csrf_token %}
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+      <input type="text" id="form2Example1" class="form-control" />
+      <label class="form-label" name="username" for="form2Example1">Email address</label>
+    </div>
+  
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+      <input type="password" id="form2Example2" class="form-control" />
+      <label class="form-label" name='password' for="form2Example2">Password</label>
+    </div>
+  
+    <!-- 2 column grid layout for inline styling -->
+    
+  
+    <!-- Submit button -->
+    <input type="submit" value="submit">
+  
+    
+  </form>

@@ -38,6 +38,7 @@ def loginPage(request):
         else:
             return render(request, 'registration/signup.html')
         # Return an 'invalid login' error message.
+        return render(request,'authenticate/login.html')
     else:
          return render(request, 'main/about.html')           
 
