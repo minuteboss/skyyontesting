@@ -23,7 +23,7 @@ def signup(request):
 			
 
 		context = {'form':form}
-		return render(request, 'registration/login.html', context)
+		return render(request, 'registration/signup.html', context)
 
      
 
