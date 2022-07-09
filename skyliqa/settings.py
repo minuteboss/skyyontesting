@@ -31,6 +31,8 @@ ALLOWED_HOSTS = ['skyliqa.herokuapp.com','127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    'crispy_forms',
+    'register',
     'main',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -119,6 +121,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+CRISPY_TEMPLATE_PACK = 'uni_form'
 
 LOGIN_REDIRECT_URL = "dashboard"
 LOGOUT_REDIRECT_URL = "/"
