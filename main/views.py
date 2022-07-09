@@ -19,24 +19,26 @@ def signup(request):
 				user = form.cleaned_data.get('username')
 				messages.success(request, 'Account was created for ' + user)
 
-				return redirect('login')
+				return redirect('loginPage')
 			
 
 		context = {'form':form}
 		return render(request, 'registration/signup.html', context)
 
 def loginPage(request):
-    username = request.POST['signin_username']
-    password = request.POST['signin_password']
-    user = authenticate(request, username=username, password=password)
-    if user is not None:
-        login(request, user)
-        return redirect('dashboard')
-        # Redirect to a success page.
-        ...
-    else:
+    if request.method=='POST'
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('dashboard')
+            # Redirect to a success page.
+        
+        else:
+            return render(request, 'registration/signup.html')
         # Return an 'invalid login' error message.
-        ...     
+            
 
 #dashboard
 def dashboard(request):
