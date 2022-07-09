@@ -26,7 +26,7 @@ def signup(request):
 		return render(request, 'registration/signup.html', context)
 
 def loginPage(request):
-    if request.method=='POST'
+    if request.method=='POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
         user = authenticate(request, username=username, password=password)
@@ -38,7 +38,8 @@ def loginPage(request):
         else:
             return render(request, 'registration/signup.html')
         # Return an 'invalid login' error message.
-            
+    else:
+         return render(request, 'main/about.html')           
 
 #dashboard
 def dashboard(request):
